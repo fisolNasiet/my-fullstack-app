@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.server.ResponseStatusException
 import spring_boot_backend_notes.database.model.RefreshToken
 import spring_boot_backend_notes.database.model.User
+import spring_boot_backend_notes.database.repository.NoteRepository
 import spring_boot_backend_notes.database.repository.RefreshTokenRepository
 import spring_boot_backend_notes.database.repository.UserRepository
 import java.security.MessageDigest
@@ -20,7 +21,8 @@ class AuthService(
     private val jwtService: JwtService,
     private val userRepository: UserRepository,
     private val hashEncoder: HashEncoder,
-    private val refreshTokenRepository: RefreshTokenRepository
+    private val refreshTokenRepository: RefreshTokenRepository,
+    private val noteRepository: NoteRepository
 ) {
 
     data class TokenPair(
@@ -111,6 +113,16 @@ class AuthService(
                 hashedToken = hashed
             )
         )
+    }
+
+    @Transactional
+    fun deleteAccount(userId: Long) {
+        val user = userRepository.findById(userId).orElseThrow {
+            ResponseStatusException(HttpStatus.NOT_FOUND, "User not found")
+        }
+        noteRepository.deleteByOwnerId(userId)
+        refreshTokenRepository.deleteByUser(user)
+        userRepository.delete(user)
     }
 
     private fun hashToken(token: String): String {
