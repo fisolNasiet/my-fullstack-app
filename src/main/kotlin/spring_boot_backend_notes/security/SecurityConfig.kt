@@ -3,6 +3,7 @@ package spring_boot_backend_notes.security
 import jakarta.servlet.DispatcherType
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.http.SessionCreationPolicy
@@ -24,6 +25,8 @@ class SecurityConfig(
                 auth
                     .requestMatchers("/")
                     .permitAll()
+                    .requestMatchers(HttpMethod.DELETE, "/auth/me")
+                    .authenticated()
                     .requestMatchers("/auth/**")
                     .permitAll()
                     .dispatcherTypeMatchers(

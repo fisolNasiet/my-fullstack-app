@@ -2,8 +2,10 @@ package spring_boot_backend_notes.controller
 
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotBlank
+import org.springframework.http.HttpStatus
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
 import spring_boot_backend_notes.database.model.Note
 import spring_boot_backend_notes.database.repository.NoteRepository
 import spring_boot_backend_notes.database.repository.UserRepository
@@ -67,14 +69,14 @@ class NoteController(
     fun deleteById(@PathVariable id: Long) {
         val ownerId = (SecurityContextHolder.getContext().authentication.principal as String).toLong()
         val note = noteRepository.findById(id).orElseThrow {
-            IllegalArgumentException("Note not found")
+            ResponseStatusException(HttpStatus.NOT_FOUND, "Note not found")
         }
 
         // Compare Longs directly
         if (note.owner.id == ownerId) {
             noteRepository.deleteById(id)
         } else {
-            throw IllegalAccessException("You do not own this note")
+            throw ResponseStatusException(HttpStatus.FORBIDDEN, "You do not own this note")
         }
     }
 }
