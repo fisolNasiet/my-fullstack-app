@@ -1,0 +1,37 @@
+.notes-page {
+  min-height: 100%;
+  padding: 24px 20px 140px;
+}
+
+.notes-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.notes-page__header h1 {
+  margin: 0;
+}
+
+.notes-page__error {
+  color: var(--color-error-red);
+  margin: 16px 0 0;
+}
+
+.notes-page__status {
+  color: var(--color-on-black-muted);
+  margin-top: 32px;
+}
+
+.notes-page__grid {
+  margin-top: 20px;
+  columns: 2;
+  column-gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .notes-page__grid {
+    columns: 1;
+  }
+}

@@ -1,0 +1,29 @@
+.confirm-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+.confirm-dialog {
+  background: var(--color-elevated-black);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  max-width: 380px;
+  width: 100%;
+}
+
+.confirm-dialog__message {
+  color: var(--color-on-black-muted);
+  margin: 12px 0 24px;
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
