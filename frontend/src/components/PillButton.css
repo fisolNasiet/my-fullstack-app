@@ -1,0 +1,51 @@
+.pill-button {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.pill-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pill-button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.pill-button--primary {
+  background: var(--color-accent-yellow);
+  color: var(--color-on-accent);
+}
+
+.pill-button--danger {
+  background: var(--color-error-red);
+  color: var(--color-on-error-red);
+}
+
+.pill-button--outline {
+  background: transparent;
+  color: var(--color-on-black);
+  border: 1px solid var(--color-on-black-muted);
+}
+
+.pill-button__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: pill-spin 0.7s linear infinite;
+}
+
+@keyframes pill-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

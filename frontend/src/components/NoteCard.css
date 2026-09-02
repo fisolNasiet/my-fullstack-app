@@ -1,0 +1,47 @@
+.note-card {
+  border-radius: var(--radius-card);
+  padding: 18px;
+  color: var(--color-on-accent);
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.note-card__title {
+  margin: 0;
+  word-break: break-word;
+}
+
+.note-card__delete {
+  border: none;
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--color-on-accent);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.note-card__delete:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.note-card__content {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  opacity: 0.85;
+}

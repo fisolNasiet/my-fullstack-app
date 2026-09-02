@@ -1,0 +1,16 @@
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-elevated-black);
+  padding: 10px 16px;
+  color: var(--color-on-black);
+  width: fit-content;
+}
+
+.filter-pill__count {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  font-size: 12px;
+}

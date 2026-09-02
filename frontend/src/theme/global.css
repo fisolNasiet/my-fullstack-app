@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-pitch-black: #0a0a0a;
+  --color-elevated-black: #161616;
+  --color-pale-yellow: #faf0c8;
+  --color-pale-yellow-surface: #f3e6ae;
+  --color-on-black: #ffffff;
+  --color-on-black-muted: rgba(255, 255, 255, 0.6);
+  --color-on-pale-yellow: #1a1408;
+  --color-on-pale-yellow-muted: rgba(26, 20, 8, 0.55);
+  --color-accent-coral: #ff9e80;
+  --color-accent-yellow: #ffd54f;
+  --color-accent-green: #b9e4a6;
+  --color-accent-blue: #a8d8f0;
+  --color-on-accent: #1a1408;
+  --color-error-red: #ff6b5e;
+  --color-on-error-red: #2a0705;
+
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+
+  --font-family: 'Poppins', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--color-pitch-black);
+  color: var(--color-on-black);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.text-display {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.text-headline {
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 800;
+}
+
+.text-title {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.text-title-medium {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.text-body-medium {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+.text-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.pill {
+  border-radius: var(--radius-pill);
+}
+
+.dotted-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.frosted-glass {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .frosted-glass {
+    background: rgba(0, 0, 0, 0.65);
+  }
+}
