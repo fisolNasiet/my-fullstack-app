@@ -16,6 +16,7 @@ The application utilizes a React frontend and a Spring Boot API backend, orchest
 *   **Cloud Infrastructure:** AWS (VPC, ALB, NAT Gateway, ECR, EC2, RDS)
 
 ## System Architecture
+<img width="746" height="588" alt="Screenshot 2026-09-04 094610" src="https://github.com/user-attachments/assets/4a6f64b6-216a-4a9e-8888-2dd4e68a5bf5" />
 
 The application infrastructure is designed with a strong emphasis on security, high availability, and separation of concerns. 
 
