@@ -34,7 +34,8 @@ The system is deployed within a custom **AWS VPC (10.0.0.0/16)** partitioned int
     *   **Jenkins EC2:** A dedicated build server for continuous integration and delivery.
 
 ### 2. Container Lifecycle & Deployment 
-<img width="1184" height="912" alt="Gemini_Generated_Image_tjee2ztjee2ztjee" src="https://github.com/user-attachments/assets/848aeb62-e2bf-4dec-a8a2-ad7abae8e3f6" />
+<img width="1184" height="912" alt="Gemini_Generated_Image_tjee2ztjee2ztjee" src="https://github.com/user-attachments/assets/4430d136-c15e-4568-8caf-af01b6fed0f0" />
+
 
 The deployment lifecycle is highly automated, leveraging Docker and Kubernetes to ensure consistent environments from development to production.
 
